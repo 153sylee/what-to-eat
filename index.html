@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>오늘 뭐 먹지?</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #fff7ed;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 40px 30px;
+        background: white;
+        border-radius: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    .food-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .food-card {
+        padding: 15px;
+        border-radius: 20px;
+        background: #fffaf5;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .food-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .food-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .food-card h2 {
+        margin: 12px 0 5px;
+    }
+
+    .food-card p {
+        color: #777;
+    }
+
+    #message {
+        margin-top: 30px;
+        font-size: 22px;
+        font-weight: bold;
+    }
+</style>
+    
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>🍴 오늘 뭐 먹지?</h1>
+
+        <p class="subtitle">
+            오늘은 어떤 음식이 땡기나요?
+        </p>
+
+        <div class="food-container">
+
+            <div class="food-card" onclick="selectFood('🍕 피자')">
+                <img src="images/pizza.jpg">
+                <h2>🍕 피자</h2>
+                <p>고소하고 맛있는 피자</p>
+            </div>
+
+            <div class="food-card" onclick="selectFood('🥗샐러드')">
+                <img src="images/salad.jpg">
+                <h2>🥗 샐러드</h2>
+                <p>가볍고 상큼한 샐러드</p>
+            </div>
+            <div class="food-card" onclick="selectFood('🍗 치킨')">
+                <img src="images/chicken.jpg">
+                <h2>🍗 치킨</h2>
+                <p>바삭바삭 치킨</p>
+            </div>
+
+            <div class="food-card" onclick="selectFood('🍝파스타')">
+                <img src="images/pasta.jpg">
+                <h2> 🍝파스타</h2>
+                <p>감칠맛과 풍미 파스타</p>
+            </div>
+
+        </div>
+
+        <p id="message">👇 마음에 드는 음식을 클릭해보세요!</p>
+
+    </div>
+
+
+    <script>
+
+        function selectFood(food) {
+
+            document.getElementById("message").innerHTML =
+                "🎉 " + food + "를 선택했습니다!";
+
+        }
+
+    </script>
+
+</body>
+
+</body>
+</html>
